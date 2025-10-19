@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta del Golpe Perfecto 💣</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shadows+Into+Light&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #2b0000 0%, #000000 100%);
+      color: #ffffff;
+      font-family: 'Bebas Neue', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff0000;
+      text-shadow: 0 0 15px #ff0000;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(-40px);
+      animation: dropIn 1.2s ease-out forwards;
+    }
+
+    p {
+      font-family: 'Shadows Into Light', cursive;
+      font-size: 1.3em;
+      line-height: 1.8;
+      margin: 0 auto 80px auto;
+      max-width: 750px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid #ff0000;
+      border-radius: 15px;
+      padding: 35px 25px;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(-60px);
+      animation: dropIn 1.6s 0.3s ease-out forwards;
+    }
+
+    @keyframes dropIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-60px);
+      }
+      70% {
+        opacity: 1;
+        transform: translateY(10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .mask {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/en/1/10/Dali_Mask_La_Casa_de_Papel.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.4;
+      animation: float 6s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(12px); }
+    }
+
+    .money {
+      position: fixed;
+      width: 2px;
+      height: 12px;
+      background: #00ff88;
+      opacity: 0.2;
+      top: -20px;
+      animation: rain 8s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rain {
+      0% { transform: translateY(0) rotate(10deg); opacity: 0.2; }
+      100% { transform: translateY(110vh) rotate(15deg); opacity: 0; }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>💣 Carta del Golpe Perfecto ❤️</h1>
+
+  <p>
+    Todo golpe comienza con un plan,  
+    pero el nuestro fue diferente… no hubo mapas, ni máscaras,  
+    solo dos personas que coincidieron sin planearlo.  
+    <br><br>
+
+    Nos conocimos el año pasado, cuando la vida era otro atraco distinto.  
+    Y al inicio de este año, cuando cerrabas un capítulo, empezamos a escribir el nuestro —  
+    poco a poco, con silencios, risas y miradas que decían más que cualquier discurso del Profesor. 💬  
+    <br><br>
+
+    No fue amor a primera vista. Fue algo más real, más estratégico.  
+    Como si el destino nos estuviera observando por las cámaras del Banco de España,  
+    esperando el momento justo para ejecutar el plan. 🕶️  
+    <br><br>
+
+    Y hace solo unas semanas, el golpe comenzó.  
+    Nuestra amistad cambió de rumbo,  
+    y sin darnos cuenta, ya estábamos dentro del mayor atraco de todos:  
+    **robarle tiempo al mundo para pasarlo juntos.** ❤️  
+    <br><br>
+
+    Si esto fuera un asalto, lo único que quiero es rendirme ante ti,  
+    con las manos arriba, y el corazón completamente expuesto.  
+    Porque contigo, el amor no es un crimen...  
+    es el golpe más perfecto de mi vida. 💥  
+    <br><br>
+
+    Con todo mi cariño,  
+    <br>🔴 Tu cómplice favorito 🖤
+  </p>
+
+  <div class="mask"></div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Billetes cayendo
+    for (let i = 0; i < 40; i++) {
+      const money = document.createElement('div');
+      money.className = 'money';
+      money.style.left = Math.random() * 100 + 'vw';
+      money.style.animationDuration = (6 + Math.random() * 4) + 's';
+      money.style.animationDelay = (Math.random() * 5) + 's';
+      document.body.appendChild(money);
+    }
+  </script>
+</body>
+</html>
